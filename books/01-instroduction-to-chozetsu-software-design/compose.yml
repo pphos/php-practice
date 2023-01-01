@@ -1,0 +1,13 @@
+services:
+  php81:
+    build:
+      context: .
+    tty: true
+    ports:
+      - 80:80
+    volumes:
+      # Forwards the local Docker socket to the container.
+      - /var/run/docker.sock:/var/run/docker-host.sock
+      - .:/workspace:cached
+      - ~/.aws/:/root/.aws
+    working_dir: /workspace
