@@ -48,7 +48,7 @@ class CustomUserProvider implements UserProvider
      */
     public function validateCredentials(Authenticatable $user, array $credentials)
     {
-      return $credentials['id'] === 1;
+      return $credentials['id'] == 1;
     }
 
     /**
